@@ -1,0 +1,40 @@
+
+TC_UI_001 – Booking with Valid Data
+Preconditions:
+- Room exists and is available for selected dates.
+Steps:
+1. Open Home page (/).
+2. Select check‑in and check‑out within available range.
+3. Open any room → click "Reserve Now" to show form.
+4. Fill First name, Last name, Email, Phone with valid values.
+5. Click "Reserve Now" (submit).
+Expected:
+- Booking is created successfully.
+- Success card (e.g., "Booking Confirmed") is visible and shows the booked date range.
+- Booked dates become unavailable for new bookings.
+
+
+TC_UI_002 – Booking with Invalid Data
+Preconditions:
+- Room exists; selected dates are available.
+Steps:
+1. Repeat steps 1–3 from TC_UI_001.
+2. Submit one invalid variant:
+a) Empty required fields; or
+b) Invalid email format; or
+c) Short/alpha phone.
+Expected:
+- Booking is NOT created.
+- Inline/alert validation is visible for the field(s).
+- User remains on the form (no confirmation card).
+
+
+TC_UI_003 – Booked Dates Are Unavailable
+Preconditions:
+- Room has an active booking for dates D1–D2 (can be created via UI or API).
+Steps:
+1. Open Home → open the same room.
+2. Navigate the calendar around D1–D2.
+Expected:
+- Dates D1–D2 are visibly disabled/unavailable.
+- User cannot select those dates.
